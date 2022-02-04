@@ -1,9 +1,10 @@
 {
-    "name": "testPack",
+    "name": "test",
     "id": "test",
     "description": {
         "en": ""
     },
+    "url":"https://testpack.emerginov2home.nohost.me/test",
     "version": "1.0~ynh3",
     "license": "free",
     "maintainer": {
