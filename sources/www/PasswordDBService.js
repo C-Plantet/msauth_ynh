@@ -69,6 +69,10 @@ class PasswordDBService{
         return this.dao.get('SELECT * FROM users WHERE username = ?',[username])
     }
 
+    async getAll(){
+        return this.dao.get('SELECT * FROM users')
+    }
+
 
 
     async createUser(name,surname,username,pwd,admin){
