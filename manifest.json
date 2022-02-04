@@ -1,0 +1,44 @@
+{
+    "name": "Emerginov2",
+    "id": "my_webapp_node",
+    "description": {
+        "en": ""
+    },
+    "version": "1.0~ynh3",
+    "license": "free",
+    "maintainer": {
+        "name": "None...",
+        "email": ""
+    },
+    "requirements": {
+        "yunohost": ">= 3.8.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "nodejs",
+        "psql"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for your Webapp",
+                    "fr": "Choisissez un domaine pour votre Webapp"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public website?",
+                    "fr": "Est-ce un site public ?"
+                },
+                "default": true
+            }
+        ]
+    }
+}
