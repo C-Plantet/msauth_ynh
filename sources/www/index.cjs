@@ -93,6 +93,7 @@ app.post('/connection',function(req,res){
 app.post("/user",function(req,res){
 
     data=JSON.parse(JSON.stringify(req.body))
+    console.log(`${data["ProjectName"]}_${data["ProjectToken"]}`)
     let passwordDBService = new PasswordDBService(`${data["ProjectName"]}_${data["ProjectToken"]}`,'query')
     if(passwordDBService.dao != undefined){
         passwordDBService.getAll().then((donnee)=>{

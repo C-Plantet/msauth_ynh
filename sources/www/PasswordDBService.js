@@ -70,7 +70,7 @@ class PasswordDBService{
     }
 
     async getAll(){
-        return this.dao.get('SELECT * FROM users')
+        return this.dao.all('SELECT * FROM users')
     }
 
 
