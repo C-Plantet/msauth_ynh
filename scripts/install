@@ -26,7 +26,7 @@ ynh_abort_if_errors
 ynh_print_info --message="Retrieving arguments from the manifest..."
 
 domain=$YNH_APP_ARG_DOMAIN
-path_url="/test"
+path_url="/helloworld"
 is_public=$YNH_APP_ARG_IS_PUBLIC
 
 db_name="db_emerginov_test"
