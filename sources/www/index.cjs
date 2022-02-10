@@ -45,7 +45,7 @@ app.post('/inscription', function(req, res) {
 
     
         if (user!==undefined){
-            res.status(289);
+            res.send("Failed");
         }
 
         else{
@@ -53,12 +53,12 @@ app.post('/inscription', function(req, res) {
             passwordDBService.createUser(data["name"],data["surname"],data["username"],data["pwd"],data["admin"]).then(()=>{
             
                 passwordDBService.getAllUsers().then((list)=>{
-            
-                    res.send("Cool")
+                    
+                    res.send(list)
                 })  
         
             })
-        }   
+        }
     })
     
 });
@@ -104,6 +104,9 @@ app.post("/user",function(req,res){
 
 });
 
+app.get('/', function(req,res){
+    res.send("HelloWorld")
+});
 
 
 
