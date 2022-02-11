@@ -1,10 +1,10 @@
 {
-    "name": "test",
-    "id": "test",
+    "name": "msAuth",
+    "id": "msAuth",
     "description": {
         "en": ""
     },
-    "url":"https://testpack.emerginov2home.nohost.me/test",
+    "url":"https://testpack.emerginov2home.nohost.me:2080/ms",
     "version": "1.0~ynh3",
     "license": "free",
     "maintainer": {
@@ -17,8 +17,7 @@
     "multi_instance": true,
     "services": [
         "nginx",
-        "nodejs",
-        "psql"
+        "nodejs"
     ],
     "arguments": {
         "install" : [

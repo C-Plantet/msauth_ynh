@@ -68,7 +68,7 @@ ynh_app_setting_set --app=$app --key=admin_mail_html --value=1
 ynh_print_info --message="Configuring firewall..."
 
 # Find an available port
-port=5000
+port=2080
 ynh_app_setting_set --app=$app --key=port --value=$port
 
 #=================================================
@@ -78,6 +78,7 @@ ynh_print_info --message="Installing dependencies..."
 
 ynh_install_nodejs --nodejs_version="12.16.3"
 ynh_use_nodejs
+ExecStart=__YNH_NODE__ my_app run
 
 #=================================================
 # CREATE A POSTGRESQL DATABASE
