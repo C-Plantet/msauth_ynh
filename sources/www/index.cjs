@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(methodOverride('_method'));
 
-app.post('/initDB',function(req,res){
+app.post('/ms/initDB',function(req,res){
 
     data = JSON.parse(JSON.stringify(req.body))
     console.log(data["ProjectToken"])
@@ -43,7 +43,7 @@ app.post('/initDB',function(req,res){
 });
 
 
-app.post('/inscription', function(req, res) {
+app.post('/ms/inscription', function(req, res) {
     
     data = JSON.parse(JSON.stringify(req.body))
     console.log(data)
@@ -72,7 +72,7 @@ app.post('/inscription', function(req, res) {
     
 });
 
-app.post('/connection',function(req,res){
+app.post('/ms/connection',function(req,res){
 
     data = JSON.parse(JSON.stringify(req.body))
     console.log(data)
@@ -99,7 +99,7 @@ app.post('/connection',function(req,res){
 
 })
 
-app.post("/user",function(req,res){
+app.post("/ms/user",function(req,res){
 
     data=JSON.parse(JSON.stringify(req.body))
     console.log(`${data["ProjectName"]}_${data["ProjectToken"]}`)
@@ -113,7 +113,7 @@ app.post("/user",function(req,res){
 
 });
 
-app.get('/helloworld', function(req,res){
+app.get('/ms/helloworld', function(req,res){
     res.render("index")
 });
 
