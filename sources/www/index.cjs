@@ -132,14 +132,14 @@ app.delete('/mdp/:name',function(req,res){
 
 });
 
-https.createServer(app).listen(2443,() => {
+/*https.createServer(app).listen(2443,() => {
     console.log(`Example app listening at port 2443`)
     logger.info('Server HTTPS successfully started')
 });
+*/
 
-
-http.createServer(app).listen(2080,() => {
-    console.log(`Example app listening at port 2080`)
+app.listen(2000,() => {
+    console.log(`Example app listening at port 2000`)
     logger.info('Server HTTP successfully started')
 })
 
