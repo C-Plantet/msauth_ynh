@@ -6,6 +6,15 @@ let PasswordDBService = require('./PasswordDBService.js');
 const User = require('./model/User.js');
 const methodOverride = require('method-override');
 const PasswordDBServices = require('./PasswordDBServices.js')
+const fs = require('fs')
+
+const https = require('https');
+const http = require('http');
+
+const options = {
+    key: fs.readFileSync('selfsigned.key'),
+    cert: fs.readFileSync('selfsigned.crt')
+};
 
 let app = express();
 
@@ -105,7 +114,7 @@ app.post("/user",function(req,res){
 });
 
 app.get('/helloworld', function(req,res){
-    res.send("HelloWorld")
+    res.render("index")
 });
 
 
@@ -123,8 +132,14 @@ app.delete('/mdp/:name',function(req,res){
 
 });
 
-
-app.listen(port,() => {
-    console.log(`Example app listening at port 2000`)
-    logger.info('Server successfully started')
+https.createServer(app).listen(2443,() => {
+    console.log(`Example app listening at port 2443`)
+    logger.info('Server HTTPS successfully started')
 });
+
+
+http.createServer(app).listen(2080,() => {
+    console.log(`Example app listening at port 2080`)
+    logger.info('Server HTTP successfully started')
+})
+
