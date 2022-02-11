@@ -78,7 +78,6 @@ ynh_print_info --message="Installing dependencies..."
 
 ynh_install_nodejs --nodejs_version="12.16.3"
 ynh_use_nodejs
-ExecStart=__YNH_NODE__ my_app run
 
 #=================================================
 # CREATE A POSTGRESQL DATABASE
