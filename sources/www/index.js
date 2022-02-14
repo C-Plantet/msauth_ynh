@@ -138,7 +138,7 @@ app.delete('/mdp/:name',function(req,res){
 });
 */
 
-app.listen(2000,() => {
+app.listen(port,() => {
     console.log(`Example app listening at port 2000`)
     logger.info('Server HTTP successfully started')
 })

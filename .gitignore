@@ -5,7 +5,7 @@
 .idea
 
 # Log file
-#*.log
+*.log
 yarn-error.log
 # BlueJ files
 *.ctxt
