@@ -5,7 +5,7 @@
 #=================================================
 
 # dependencies used by the app
-nodejsversion=8.10.0
+nodejsversion=14.17.3
 
 #=================================================
 # PERSONAL HELPERS

@@ -76,9 +76,8 @@ ynh_app_setting_set --app=$app --key=port --value=$port
 #=================================================
 ynh_print_info --message="Installing dependencies..."
 
-ynh_install_nodejs --nodejs_version="12.16.3"
+ynh_install_nodejs --nodejs_version="14.17.3"
 ynh_use_nodejs
-
 
 #=================================================
 # CREATE A POSTGRESQL DATABASE
