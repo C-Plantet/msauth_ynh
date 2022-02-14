@@ -27,7 +27,7 @@
                     "en": "Choose a domain for your Webapp",
                     "fr": "Choisissez un domaine pour votre Webapp"
                 },
-                "example": "domain.org"
+                "example": "testpack.emerginov2home.nohost.me"
             },
             {
                 "name": "is_public",
