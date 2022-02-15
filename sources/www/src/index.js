@@ -64,7 +64,7 @@ app.post('/ms/inscription', function(req, res) {
             }
         })
 
-     }, 10);
+     }, 500);
     
     
     

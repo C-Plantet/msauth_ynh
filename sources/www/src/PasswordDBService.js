@@ -25,9 +25,10 @@ class PasswordDBService{
             this.dao = new UserDAO(project)
 
             try{
-                this.dao.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY,name TEXT,surname TEXT,username TEXT UNIQUE,password TEXT,admin INTEGER)")
-                logger.info('Database successfully created !')
-
+                this.dao.run("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY,name TEXT,surname TEXT,username TEXT UNIQUE,password TEXT,admin INTEGER)").then(()=>{
+                    logger.info('Database successfully created !')
+                })
+                
             }
             catch{
                 logger.error('Error during database creation !!!')
