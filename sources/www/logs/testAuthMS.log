@@ -31,3 +31,7 @@
 {"level":"info","message":"Server HTTP successfully started","timestamp":"15-02-2022-02-49-12"}
 {"level":"info","message":"Database successfully created !","timestamp":"15-02-2022-02-49-22"}
 {"level":"info","message":"User succesfully created","timestamp":"15-02-2022-02-49-23"}
+{"level":"info","message":"Server HTTP successfully started","timestamp":"15-02-2022-03-45-10"}
+{"level":"error","message":"DB not found","timestamp":"15-02-2022-03-45-24"}
+{"level":"info","message":"Server HTTP successfully started","timestamp":"15-02-2022-03-45-48"}
+{"level":"error","message":"DB not found","timestamp":"15-02-2022-03-45-52"}
