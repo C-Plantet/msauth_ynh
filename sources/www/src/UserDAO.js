@@ -16,6 +16,7 @@ class UserDAO{
         let nom = String(project) + ".db"
         this.allUsers = null
         console.log(nom)
+        console.log(__dirname)
         this.db = new sqlite3.Database(path.resolve(__dirname,nom),err => {
             if (err){
                 throw err
