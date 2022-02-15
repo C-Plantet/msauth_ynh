@@ -17,11 +17,26 @@ class UserDAO{
         this.allUsers = null
         console.log(nom)
         console.log(__dirname)
-        this.db = new sqlite3.Database(path.resolve(__dirname,nom),err => {
+
+        if (fs.existsSync(`${__dirname}/${nom}`)) {
+
+          console.log("Hello")
+          this.db = new sqlite3.Database(path.resolve(__dirname,nom),sqlite3.OPEN_READWRITE,err => {
+              if (err){
+                  throw err
+              }
+          });
+        }
+
+        else{
+          console.log("Works")
+          this.db = new sqlite3.Database(path.resolve(__dirname,nom),err => {
             if (err){
                 throw err
             }
         });
+
+        }
     }
 
     run(sql, params = []) {

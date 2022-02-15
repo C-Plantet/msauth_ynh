@@ -162,12 +162,12 @@ ynh_store_file_checksum --file="$config_file"
 #=================================================
 # SECURE FILES AND DIRECTORIES
 #=================================================
-#ynh_print_info --message="Securing files and directories..."
+ynh_print_info --message="Securing files and directories..."
 
-#chown -R $app: "$final_path"
+chown -R $app: "$final_path"
 # Home directory of the user needs to be owned by root to allow
 # SFTP connections
-#chown root: "$final_path"
+chown root: "$final_path"
 
 #=================================================
 # START SYSTEMD SERVICE
