@@ -39,7 +39,7 @@ class PasswordDBService{
         else if(type==="query"){
 
             let nom = String(project) + ".db"
-
+            console.log(`${__dirname}/${nom}`)
             if(fs.existsSync(`${__dirname}/${nom}`)){
                 this.dao = new UserDAO(project)
             }
