@@ -105,7 +105,7 @@ app.post("/ms/user",function(req,res){
 });
 
 app.get('/ms/helloworld', function(req,res){
-    res.render("index")
+    res.send("hello")
 });
 
 
