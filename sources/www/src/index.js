@@ -9,8 +9,9 @@ const PasswordDBServices = require('./PasswordDBServices.js')
 
 let app = express();
 
-const log = require('./Logger.js')
-const logger = log.logger
+const log = require('./Logger.js');
+const logger = log.logger;
+
 
 
 app.set('view engine',"ejs");
@@ -29,7 +30,7 @@ app.post('/ms/initDB',function(req,res){
     console.log(data["ProjectToken"])
     let passwordDBService = new PasswordDBService(`${data["ProjectName"]}_${data["ProjectToken"]}`)
 
-    res.send("Success")
+    res.send("Success");
 
 });
 
@@ -41,25 +42,31 @@ app.post('/ms/inscription', function(req, res) {
 
     let passwordDBService = new PasswordDBService(`${data["ProjectName"]}_${data["ProjectToken"]}`,"creation")
 
-    passwordDBService.getUserByUsername(data["username"]).then((user)=>{
+    setTimeout(() => {  
+
+        passwordDBService.getUserByUsername(data["username"]).then((user)=>{
 
     
-        if (user!==undefined){
-            res.send("Failed");
-        }
-
-        else{
-
-            passwordDBService.createUser(data["name"],data["surname"],data["username"],data["pwd"],data["admin"]).then(()=>{
+            if (user!==undefined){
+                res.send("Failed");
+            }
+    
+            else{
+    
+                passwordDBService.createUser(data["name"],data["surname"],data["username"],data["pwd"],data["admin"]).then(()=>{
+                
+                    passwordDBService.getAllUsers().then((list)=>{
+                        
+                        res.send(list)
+                    })  
             
-                passwordDBService.getAllUsers().then((list)=>{
-                    
-                    res.send(list)
-                })  
-        
-            })
-        }
-    })
+                })
+            }
+        })
+
+     }, 10);
+    
+    
     
 });
 
